@@ -36,7 +36,7 @@ const Pokedex = () => {
             <input type="search" onChange={handleInputChange} placeholder="Search pokemon..."/>
 
             <div>{pokemon.name}</div>
-            {/* <img src={pokemon.sprites.front_default} /> */}
+            <img src={pokemon?.sprites?.front_default} />
         </>
     )
 }
