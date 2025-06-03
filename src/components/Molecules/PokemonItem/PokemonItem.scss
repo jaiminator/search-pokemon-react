@@ -1,0 +1,24 @@
+$pokemon-card-bg-color: #ccc;
+$font-family-txt-pokemon: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+.pokemonItemContainer{
+    background-color: $pokemon-card-bg-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border: 5px solid purple;
+    border-radius: 10px;
+    padding: 20px;
+    width: 140px;
+}
+
+.pokemonItemContainer img{
+   width: 50px;
+}
+
+.pokemonItemContainer p{
+   font-weight: bold;
+   font-family: $font-family-txt-pokemon;
+   color: #000;
+}

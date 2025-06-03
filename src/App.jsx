@@ -1,15 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Pokedex from './components/Pokedex'
+import PokemonList from './components/Organisms/PokemonList'
 
 function App() {
-  
-
   return (
     <>
-      <Pokedex />
+      <h1>Pokedex</h1>
+      <PokemonList />
     </>
   )
 }
