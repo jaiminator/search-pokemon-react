@@ -1,0 +1,21 @@
+@mixin contentStyle() {
+    width: 50%;
+    padding: 10px;
+    /* border: 2px solid black;
+    border-radius: 10px; */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px;
+}
+
+.leftContent {
+    @include contentStyle();
+}
+
+.rightContent {
+    @include contentStyle();
+}
