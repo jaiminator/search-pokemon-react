@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import DragonBallCharacters from "../../Molecules/CharactersItem/DragonBItem";
+import { useState, useEffect, useContext } from "react";
+import { CharacterItem } from "../../Molecules/CharacterItem/CharacterItem";
 import "./DragonBallList.scss";
 
 const DragonBallList = () => {
@@ -22,7 +22,7 @@ const DragonBallList = () => {
                 {characters.map((character, index) => {
                     return (
                     <>
-                        <DragonBallCharacters name={character.name} image={character.image}  key={index} />
+                        <CharacterItem name={character.name} image={character.image} key={index} />
                     </>
                     );
                 })}

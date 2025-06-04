@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
-import PokemonItem from "../../Molecules/PokemonItem/PokemonItem";
+import { useState, useEffect, useContext } from "react";
+import { ThemeContext } from "../../../contexts/ThemeContext";
+import { CharacterItem } from "../../Molecules/CharacterItem/CharacterItem";
 import "./PokemonList.scss";
 
 const PokemonList = () => {
 
     const [pokemons, setPokemons] = useState([]);
+    const theme = useContext(ThemeContext);
 
     useEffect(() => {
         fetch("https://pokeapi.co/api/v2/pokemon/")
@@ -22,7 +24,7 @@ const PokemonList = () => {
                 {pokemons.map((pokemon, index) => {
                     return (
                     <>
-                        <PokemonItem name={pokemon.name} key={index} />
+                        <CharacterItem name={pokemon.name} image={`https://img.pokemondb.net/sprites/home/normal/${pokemon.name}.png`} key={index} />
                     </>
                     );
                 })}
