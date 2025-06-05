@@ -4,15 +4,15 @@ import "./CharacterItem.scss"
 
 const CharacterItem = ({ name, image }) => {
 
-  const theme = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <>
-      <div className="characterContainer" style={{backgroundColor: theme}}>
+      <div onClick={() => setTheme("dark")} className={`characterItemContainer${theme == "dark" ? "-dark" : ''}`}>
         <img src={`${image}`} 
         alt={`${name}.png`}
         />
-        <p style={{color: 'white'}}>{name}</p>
+        <p>{name}</p>
       </div>
     </>
   )
