@@ -16,12 +16,18 @@ $font-family-txt-character: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grand
    @include characterContainerMixin($theme: #f1f1f1);
    color:#000;
    font-weight: bold;
+   transition-property: background-color, color;
+   transition-duration: 1s;
+   transition-timing-function: ease;
 }
 
 .characterItemContainer-dark{
    @include characterContainerMixin($theme: #3e3d3d);
    color:#fff;
    font-weight: bold;
+   transition-property: background-color, color;
+   transition-duration: 1s;
+   transition-timing-function: ease;
 }
 
 img{
