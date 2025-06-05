@@ -1,19 +1,13 @@
-import { useState, useEffect, useContext } from "react";
 import { CharacterItem } from "../../Molecules/CharacterItem/CharacterItem";
+import { useFetchCharactersData } from "../../../hooks/useFetchCharactersData";
 import "./DragonBallList.scss";
 
 const DragonBallList = () => {
 
-    const [characters, setCharacters] = useState([]);
-
-    useEffect(() => {
-        fetch("https://dragonball-api.com/api/characters?limit=20")
-        .then((res) => res.json())
-        .then((data) => {
-            setCharacters(data.items);
-        });
-    }, []);
-    
+    const { characters } = useFetchCharactersData(
+        {url: "https://dragonball-api.com/api/characters?limit=20",
+        resultsAttribute: "items"}
+    )
 
     return (
         <div>
@@ -22,7 +16,9 @@ const DragonBallList = () => {
                 {characters.map((character, index) => {
                     return (
                     <>
-                        <CharacterItem name={character.name} image={character.image} key={index} />
+                        <CharacterItem name={character.name}
+                        image={character.image}
+                        key={index} />
                     </>
                     );
                 })}
